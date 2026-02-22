@@ -13,8 +13,9 @@
 
 ```sh
 project/
-├── embedding.ipynb
-├──  main.ipynb
+├── embedding.py
+├──  main.py
+├──  semantic_chunker.py
 ```
 - В файле embedding.py логика chunking и embedding. Перед запуском 
 надо убедиться, что папки и .md файлы мастерской находятся в файле data.
