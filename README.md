@@ -15,8 +15,11 @@
 project/
 ├── embedding.ipynb
 ├──  main.ipynb
-├── data/ # Материалы
 ```
+- В файле embedding.py логика chunking и embedding. Перед запуском 
+надо убедиться, что папки и .md файлы мастерской находятся в файле data.
+Предусмотрена возможности сразу загрузить архив. 
+- Во файле main.py скачивание модели gemma-7b-it и использование RAG.
 
 ## Использованные модели
 Были использованы две модели:
@@ -27,13 +30,14 @@ project/
     
 
 ## Установка и запуск
+1. Установите зависемости
+```sh
+pip install -qU langchain_huggingface transformers bitsandbytes
+pip install -q torch torchvision --index-url https://download.pytorch.org/whl/cpu
+pip install -qU langchain_community langchain_core
+pip install faiss-cpu
+```
+2. Создайте папку data и разместите в ней нужные материалы. 
 
-Программа была сделана в Google Colab.
-- В файле embedding.py логика chunking и embedding. Перед запуском 
-надо убедиться, что папки и .md файлы мастерской находятся в файле data.
-Предусмотрена возможности сразу загрузить архив. 
-- Во файле main.py скачивание модели gemma-7b-it и использование RAG.
 
-Это сделано для того, чтобы реализовать возможность быстрого запуска программы, при наличии 
-файлов из vector_store. 
 
